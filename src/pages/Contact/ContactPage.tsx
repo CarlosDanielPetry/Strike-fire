@@ -50,9 +50,9 @@ const ContactPage: React.FC = () => {
         
         <div className="relative z-10 flex items-center justify-center h-full px-4">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-white">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-white">Contate-nos</h1>
             <p className="text-gray-lighter mt-4 max-w-xl mx-auto">
-              Get in touch with the Strike Fire team
+              Entre em contato com a equipe do Strike Fire
             </p>
           </div>
         </div>
@@ -62,7 +62,7 @@ const ContactPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form de contato */}
           <div>
-            <h2 className="text-2xl font-heading font-bold mb-6">Send Us a Message</h2>
+            <h2 className="text-2xl font-heading font-bold mb-6">Mande-nos uma Mensagem</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
