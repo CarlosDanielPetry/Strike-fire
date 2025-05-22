@@ -184,7 +184,7 @@ const MembershipPage: React.FC = () => {
                     fullWidth 
                     size="lg"
                   >
-                    Select Plan
+                    Selecionar Plano
                   </Button>
                 </div>
               </div>

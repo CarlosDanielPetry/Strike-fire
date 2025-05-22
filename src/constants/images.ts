@@ -13,7 +13,7 @@ export const HOME_IMAGES = {
 // Imagens de Cursos
 export const COURSE_IMAGES = {
   // Curso de Pistola para Iniciantes - Instrutor demonstrando postura básica
-  BEGINNER_PISTOL: "https://images.pexels.com/photos/936238/pexels-photo-936238.jpeg",
+  BEGINNER_PISTOL: "../Images/Cursos/Curso-de-iniciantes-pistola.svg",
   
   // Curso de Tiro Defensivo - Treinamento tático avançado
   DEFENSIVE_SHOOTING: "https://images.pexels.com/photos/7887880/pexels-photo-7887880.jpeg",

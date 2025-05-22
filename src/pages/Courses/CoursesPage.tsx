@@ -19,7 +19,7 @@ const CoursesPage: React.FC = () => {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center" 
           style={{ 
-            backgroundImage: 'url("https://images.pexels.com/photos/7314541/pexels-photo-7314541.jpeg")',
+            backgroundImage: 'url("../Images/Cursos/JUNTE-SE AOS MELHORES.svg")',
             backgroundPosition: 'center',
             filter: 'brightness(40%)'
           }}
