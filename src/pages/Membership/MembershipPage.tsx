@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Section from '../../components/UI/Section';
 import Card from '../../components/UI/Card';
 import Button from '../../components/UI/Button';
 import { CheckCircle, HelpCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const MembershipPage: React.FC = () => {
+
   useEffect(() => {
     document.title = 'Strike Fire | Membership';
     window.scrollTo(0, 0);
   }, []);
 
   const [activeTab, setActiveTab] = useState<'plans' | 'benefits' | 'faq' | 'login'>('plans');
+  const registerRef = useRef<HTMLDivElement>(null);
 
   const membershipPlans = [
     {
@@ -83,6 +86,16 @@ const MembershipPage: React.FC = () => {
       note: "Entre em contato conosco para obter preços e benefícios personalizados"
     }
   ];
+
+  const scrollToRegister = () => {
+    registerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+  /*const router = useRouter();{
+    const handleRegisterClick = () => {
+      router.push('/Auth/Registros/RegistrationScreen');
+    };
+  };*/
 
   return (
     <>
@@ -183,6 +196,7 @@ const MembershipPage: React.FC = () => {
                     variant={plan.isPopular ? "primary" : "outline"} 
                     fullWidth 
                     size="lg"
+                    onClick={scrollToRegister}
                   >
                     Selecionar Plano
                   </Button>
@@ -224,13 +238,13 @@ const MembershipPage: React.FC = () => {
           </div>
           
           {/* Registro ACT */}
-          <div className="mt-16 bg-primary bg-opacity-10 rounded-lg p-8 text-center">
+          <div className="mt-16 bg-primary bg-opacity-10 rounded-lg p-8 text-center" ref={registerRef}>
             <h3 className="text-2xl font-heading font-bold mb-4">Pronto para se juntar ao Strike Fire?</h3>
             <p className="text-gray-medium mb-6 max-w-2xl mx-auto">
               Inscreva-se hoje mesmo e aproveite os benefícios de fazer parte da nossa comunidade.
               Novos membros recebem uma sessão de orientação gratuita.
             </p>
-            <Button size="lg">Registre-se Agora</Button>
+            <Button size="lg" >Registre-se Agora</Button>
           </div>
         </Section>
       )}

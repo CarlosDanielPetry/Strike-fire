@@ -8,7 +8,7 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    port: 2611, // Porta configurada para 2611
-    host: true, // Permite acesso pela rede local
+    port: 5173, // Porta configurada para 2611
+    host: false, // Permite acesso pela rede local
   },
 });
