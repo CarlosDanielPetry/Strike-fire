@@ -3,7 +3,7 @@ import Section from '../../components/UI/Section';
 import Card from '../../components/UI/Card';
 import Button from '../../components/UI/Button';
 import { CheckCircle, HelpCircle } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+//import { useRouter } from 'next/navigation';
 
 const MembershipPage: React.FC = () => {
 

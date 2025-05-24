@@ -39,75 +39,100 @@ const CoursesPage: React.FC = () => {
       <Section bgColor="bg-white">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="w-full md:w-auto mb-4 md:mb-0">
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Search courses..." 
-                className="w-full md:w-64 pl-10 pr-4 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
-            </div>
+        <div className="relative">
+          <input 
+            type="text" 
+            placeholder="Search courses..." 
+            className="w-full md:w-64 pl-10 pr-4 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
+        </div>
           </div>
           
           <div className="flex space-x-4">
-            <div className="relative">
-              <select className="appearance-none pl-3 pr-8 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                <option value="">Todos os níveis</option>
-                <option value="beginner">Iniciante</option>
-                <option value="intermediate">Intermediário</option>
-                <option value="advanced">Avançado</option>
-              </select>
-              <Filter className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
-            </div>
-            
-            <div className="relative">
-              <select className="appearance-none pl-3 pr-8 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                <option value="">Todos os tipos</option>
-                <option value="pistol">Pistola</option>
-                <option value="rifle">Rifles</option>
-                <option value="shotgun">Espingardas</option>
-                <option value="tactical">Táticos</option>
-              </select>
-              <Filter className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
-            </div>
+        <div className="relative">
+          <select className="appearance-none pl-3 pr-8 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            <option value="">Todos os níveis</option>
+            <option value="beginner">Iniciante</option>
+            <option value="intermediate">Intermediário</option>
+            <option value="advanced">Avançado</option>
+          </select>
+          <Filter className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
+        </div>
+        
+        <div className="relative">
+          <select className="appearance-none pl-3 pr-8 py-2 bg-gray-lighter border border-gray-light rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            <option value="">Todos os tipos</option>
+            <option value="pistol">Pistola</option>
+            <option value="rifle">Rifles</option>
+            <option value="shotgun">Espingardas</option>
+            <option value="tactical">Táticos</option>
+          </select>
+          <Filter className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-medium w-4 h-4" />
+        </div>
           </div>
         </div>
 
         {/* Grade de cursos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {coursesData.map((course) => (
-            <Card key={course.id} hoverable className="h-full flex flex-col">
-              <img
-                src={course.image}
-                alt={course.title}
-                className="h-48 w-full object-cover rounded-t-lg"
-              />
-              <div className="flex-grow p-4 flex flex-col">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-semibold">{course.title}</h3>
-                  <span className="bg-primary text-white text-sm font-medium px-2.5 py-0.5 rounded">
-                    {course.level}
-                  </span>
-                </div>
-                <p className="text-gray-medium mb-2">{course.shortDescription}</p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-dark font-medium">Duração:</span>
-                    <span>{course.duration}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-dark font-medium">Próxima sessão:</span>
-                    <span>{course.schedule.upcoming[0].date}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-between items-center p-4 border-t">
-                <span className="font-bold text-lg">${course.price}</span>
-                <Link to={`/courses/${course.id}`}>
-                  <Button variant="primary" size="sm">Leia Mais</Button>
-                </Link>
-              </div>
-            </Card>
+          {coursesData.map((course, idx) => (
+        <Link
+          key={course.id}
+          to={`/courses/${course.id}`}
+          className="h-full flex flex-col"
+        >
+          <Card hoverable className="h-full flex flex-col">
+            {idx === 0 && (
+          // imagem curso 1
+          <img
+            src={import.meta.env.BASE_URL + "../Images/Cursos/Curso-de-iniciantes-pistola.svg"}
+            alt={course.title}
+            className="h-48 w-full object-cover rounded-t-lg"
+          />
+            )}
+            {idx === 1 && (
+          // imagem curso 2
+          <img
+            src={import.meta.env.BASE_URL + "../Images/Cursos/Curso-de-iniciantes-pistola.svg"}
+            alt={course.title}
+            className="h-48 w-full object-cover rounded-t-lg"
+          />
+            )}
+            {idx === 2 && (
+          // imagem curso 3
+          <img
+            src={import.meta.env.BASE_URL + "../Images/Cursos/Curso-de-iniciantes-pistola.svg"}
+            alt={course.title}
+            className="h-48 w-full object-cover rounded-t-lg"
+          />
+            )}
+            <div className="flex-grow p-4 flex flex-col">
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-lg font-semibold">
+              {course.title} <span className="ml-2 text-xs text-gray-medium">(Curso {idx + 1})</span>
+            </h3>
+            <span className="bg-primary text-white text-sm font-medium px-2.5 py-0.5 rounded">
+              {course.level}
+            </span>
+          </div>
+          <p className="text-gray-medium mb-2">{course.shortDescription}</p>
+          <div className="mt-4 space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-dark font-medium">Duração:</span>
+              <span>{course.duration}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-dark font-medium">Próxima sessão:</span>
+              <span>{course.schedule.upcoming[0].date}</span>
+            </div>
+          </div>
+            </div>
+            <div className="flex justify-between items-center p-4 border-t">
+          <span className="font-bold text-lg">${course.price}</span>
+          <Button variant="primary" size="sm">Leia Mais</Button>
+            </div>
+          </Card>
+        </Link>
           ))}
         </div>
       </Section>
