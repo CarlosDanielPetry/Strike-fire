@@ -1,8 +1,3 @@
-// Import SVGs
-// import BEGINNER_PISTOL_IMG from "../Images/Cursos/Curso-de-iniciantes-pistola.svg";
-// If you have the SVG, correct the path above. Otherwise, use a placeholder image:
-const BEGINNER_PISTOL_IMG = "https://images.pexels.com/photos/9509145/pexels-photo-9509145.jpeg";
-
 // Imagens da Home
 export const HOME_IMAGES = {
   // Hero - Imagem principal mostrando um estande de tiro profissional
@@ -12,9 +7,13 @@ export const HOME_IMAGES = {
   ABOUT_PREVIEW: "https://images.pexels.com/photos/9509145/pexels-photo-9509145.jpeg",
   
   // CTA - Imagem de fundo mostrando prática de tiro
-  CTA_BG: "https://images.pexels.com/photos/2116850/pexels-photo-2116850.jpeg",
+  CTA_BG: "https://images.pexels.com/photos/2116850/pexels-photo-2116850.jpeg"
+};
+
+// Imagens de Cursos
+export const COURSE_IMAGES = {
   // Curso de Pistola para Iniciantes - Instrutor demonstrando postura básica
-  BEGINNER_PISTOL: BEGINNER_PISTOL_IMG,
+  BEGINNER_PISTOL: "../Images/Cursos/Curso-de-iniciantes-pistola.svg",
   
   // Curso de Tiro Defensivo - Treinamento tático avançado
   DEFENSIVE_SHOOTING: "https://images.pexels.com/photos/7887880/pexels-photo-7887880.jpeg",
