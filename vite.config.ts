@@ -9,6 +9,6 @@ export default defineConfig({
   },
   server: {
     port: 5173, // Porta configurada para 2611
-    host: false, // Permite acesso pela rede local
+    host: true, // Permite acesso pela rede local
   },
 });
